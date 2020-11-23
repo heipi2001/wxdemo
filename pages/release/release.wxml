@@ -1,0 +1,45 @@
+<!--pages/release/release.wxml-->
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">发布</view>
+</cu-custom>
+
+
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    图片上传
+  </view>
+</view>
+<view class="cu-form-group">
+  <view class="grid col-4 grid-square flex-sub">
+    <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+      <image src='{{imgList[index]}}' mode='aspectFill'></image>
+      <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+        <text class="cuIcon-close"></text>
+      </view>
+    </view>
+    <view class="solids" bindtap="ChooseImage" wx:if="{{!imgList.length}}">
+      <text class="cuIcon-cameraadd"></text>
+    </view>
+  </view>
+</view>
+
+<view class="cu-form-group margin-top">
+  <view class="title">选择类型</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{pickerObject}}">
+			<view class="picker">
+				{{index?picker[index].typeName:picker[0].typeName}}
+			</view>
+		</picker>
+  </view>
+  <view class="cu-form-group align-start">
+    <view class="title">标题</view>
+      <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInputTitle" placeholder="标题"></textarea>
+	</view>
+
+  <view class="cu-form-group align-start">
+    <view class="title">简介</view>
+      <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="简介"></textarea>
+	</view>
+  <view class="padding flex flex-direction bg-white">
+    <button class="cu-btn bg-blue margin-tb-sm lg" bindtap="release">发布</button>
+  </view>

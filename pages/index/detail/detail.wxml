@@ -1,0 +1,90 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content"></view></cu-custom>
+
+<view class="cu-card dynamic no-card">
+  <view class="cu-item shadow">
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url({{data.userHeadimg}});"></view>
+        <view class="content flex-sub">
+          <view>{{data.userKickname}}</view>
+          <view class="text-gray text-sm flex justify-between">
+            {{data.gmtModified}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="text-content">
+      {{data.articleMessage}}
+    </view>
+    <view class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}">
+      <view class="bg-img {{isCard?'':'only-img'}}" style="background-image:url({{data.imageUrl}});">
+      </view>
+    </view>
+    <view class="text-gray text-sm text-right padding">
+      <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+      <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+      <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+    </view>
+
+    <!-- 评论 -->
+    <view class="cu-list menu-avatar comment solids-top">
+      <view class="cu-item" wx:for="{{commentList}}" wx:for-item="comment" wx:key="comment.commentId">
+        <view class="cu-avatar round" style="background-image:url({{comment.userHeadimg}});"></view>
+        <view class="content">
+          <view class="text-grey">{{comment.userKickname}}</view>
+          <view class="text-gray text-content text-df">
+            {{comment.commentMessage}}
+          </view>
+          <view class="margin-top-sm flex justify-between">
+            <view class="text-gray text-df">{{comment.gmtCreate}}</view>
+            <view>
+              <text class="cuIcon-appreciatefill text-gray"></text>
+              <text wx:if="{{userid === comment.userId}}" class="cuIcon-roundclosefill text-gray margin-left-sm" bindtap="deleComment" data-commentId="{{comment.commentId}}"> 删除</text>
+              <text wx:else class="cuIcon-messagefill text-gray margin-left-sm"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+ </view> 
+
+<view class="cu-tabbar-height"></view>
+
+ <view class="box fiex-comment">
+  <view class="cu-bar input">
+    <view class="cu-avatar round my-head">
+      <open-data type="userAvatarUrl" class="headImage"></open-data>
+    </view>
+    <input class="solid-bottom" maxlength="500" cursor-spacing="10" style="width:420rpx;" bindinput="message"></input>
+    <view class="action">
+      <text class="cuIcon-emojifill text-grey"></text>
+    </view>
+    <button class="cu-btn bg-green shadow-blur" style="width:120rpx;" bindtap="comment">发送</button>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+/* pages/my/setting/setting.wxss */
+.headImage{
+  overflow: hidden;
+  line-height: 20rpx; 
+}

@@ -1,0 +1,58 @@
+<!--pages/find/find.wxml-->
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">发现</view>
+</cu-custom>
+<!-- {{DotStyle?'square-dot':'round-dot'}} -->
+  <view class="cu-bar search bg-white">
+    <view class="cu-avatar round my-head">
+      <open-data type="userAvatarUrl" class="headImage"></open-data>
+    </view>
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="搜索文章" confirm-type="search" bindinput="serch"></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn round bg-blue shadow line-blue" style="width:118rpx;" bindtap="searchLike">搜索</button>
+    </view>
+  </view>
+
+
+<swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-orange '></text> 发现
+  </view>
+</view>
+
+
+<view class="cu-card article no-card">
+  <view class="cu-item shadow" wx:for="{{ArticleList}}" wx:for-item="item" wx:key="key" bindtap="godetail" data-articleId="{{item.articleId}}">
+    <view class="title">
+      <view class="text-cut">{{item.articleTitle}}</view>
+    </view>
+    <view class="content">
+      <image src="{{item.imageUrl}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content"> {{item.articleMessage}} </view>                                                                                    
+        <view>
+          <view class="cu-tag bg-red light sm round">{{item.userKickname===''?'没有名字':item.userKickname}}</view>
+          <view class="cu-tag bg-green light sm round" wx:for="{{type}}" wx:for-item="type" wx:key="key" >
+            <view wx:if="{{type.imageType === item.imageType}}">{{type.typeName}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="cu-tabbar-height"></view>

@@ -1,0 +1,39 @@
+/* pages/my/my.wxss */
+.UCenter-bg {
+  background-size: cover;
+  height: 550rpx;
+  display: flex;
+  justify-content: center;
+  padding-top: 40rpx;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-weight: 300;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.headImageView{
+  border-radius: 50%; 
+  border: 5rpx solid #FFF;  
+  width:200rpx;
+  height:200rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx; 
+}
+
+.headImage {
+  border-radius: 100rpx; 
+  width:200rpx;
+  height:200rpx;
+}
+.UCenter-bg .gif-wave{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  mix-blend-mode: screen;  
+  height: 100rpx;   
+}

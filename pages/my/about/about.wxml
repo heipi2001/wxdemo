@@ -1,0 +1,11 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">关于</view></cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于作者</view>
+  <view class='text-content'>
+    <view>嗨喽！大家好~欢迎查看陈涛的毕业设计！</view>
+    <view class='margin-top-sm'>该项目样式使用的Color-UI 一个很好看的样式库，后台用的Java技术。</view>
+    <view class='margin-top-sm'>由于学的不太好，可能这个小程序有点拉胯，大家看看就好！</view>
+    <view class='margin-top-sm'>当然要是有什么问题欢迎大家指出，谢谢！٩(๑❛ᴗ❛๑)۶</view>
+    <view class='margin-top-sm'>当然没更多功能啦，因为我不会哈哈哈！</view>
+  </view>
+</view>

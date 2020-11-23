@@ -1,0 +1,6 @@
+/* pages/find/find.wxss */
+.my-head{
+  border-radius: 50%;
+  overflow: hidden;
+  line-height:  20rpx;
+}

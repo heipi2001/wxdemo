@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/find/find",
+    "pages/friend/friend",
+    "pages/my/my",
+    "pages/release/release"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle":"black",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "colorui/components/cu-custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "index"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "find"
+      },{
+        "pagePath": "pages/friend/friend",
+        "text": "friend"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "my"
+      },{
+        "pagePath": "pages/release/release",
+        "text": "release"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+<!--pages/friend/friend.wxml-->
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">朋友</view>
+</cu-custom>
+<scroll-view scroll-y class="scrollPage">
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 我的发布
+  </view>
+</view>
+
+<view class="cu-card case no-card">
+  <view class="cu-item shadow" wx:for="{{myList}}" wx:for-item="item">
+    <view class="image">
+      <image src="{{item.imageUrl}}" mode="aspectFill" class="IndexArticleImg"></image>
+
+  <view wx:for="{{type}}" wx:for-item="types">
+     <view class="cu-tag bg-blue" wx:if="{{item.imageType === types.imageType}}">{{types.typeName}}</view>
+  </view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">{{item.articleMessage}}</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+      <view class="cu-avatar round lg my-head">
+        <open-data type="userAvatarUrl" class="headImage"></open-data>
+      </view> 
+        <view class="content flex-sub">
+          <view class="text-grey">{{name===''?'没有名字':name}}</view>
+          <view class="text-gray text-sm flex justify-between">
+            十天前
+            <view class="text-gray text-sm">
+                <text class="cuIcon-attentionfill margin-lr-xs" bindtap="godetail" data-articleId="{{item.articleId}}"> 查看</text>
+                <text class="cuIcon-delete margin-lr-xs" bindtap="delete" data-articleId="{{item.articleId}}"> 删除</text> 
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-tabbar-height"></view>
+</scroll-view>

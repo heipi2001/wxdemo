@@ -1,0 +1,11 @@
+/* pages/index/detail/detail.wxss */
+.fiex-comment{
+  position: fixed;
+  bottom: 0px;
+}
+
+.my-head{
+  border-radius: 50%;
+  overflow: hidden;
+  line-height:  20rpx;
+}

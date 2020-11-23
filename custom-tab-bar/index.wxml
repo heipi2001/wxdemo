@@ -1,0 +1,21 @@
+<!--custom-tab-bar/index.wxml-->
+<view class="cu-bar tabbar bg-white">
+    <view class="action {{selected === 0 ? 'active' : 'default'}}" data-index="0" bindtap="switchTab">
+      <view class="cuIcon-home"></view> 首页
+    </view>
+    <view class="action {{selected === 1 ? 'active' : 'default'}}" data-index="1" bindtap="switchTab">
+      <view class="cuIcon-similar"></view> 发现
+    </view>
+    <view class="action text-gray add-action {{selected === 4 ? 'active' : 'default'}}" data-index="4" bindtap="switchTab">
+      <button class="cu-btn cuIcon-add bg-green shadow release"></button>
+      发布
+    </view>
+    <view class="action {{selected === 2 ? 'active' : 'default'}}" data-index="2" bindtap="switchTab">
+      <view class="cuIcon-add"></view>
+      我的发布
+    </view>
+    <view class="action {{selected === 3 ? 'active' : 'default'}}" data-index="3" bindtap="switchTab">
+      <view class="cuIcon-people"></view>
+      我的
+    </view>
+  </view>

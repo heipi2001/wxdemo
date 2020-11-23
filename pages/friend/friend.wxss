@@ -1,0 +1,12 @@
+/* pages/friend/friend.wxss */
+.testmesg{
+  background: red;
+}
+.my-head{
+  border-radius: 50%;
+  overflow: hidden;
+  line-height:  20rpx;
+}
+.IndexArticleImg{
+  height: 400rpx;
+}

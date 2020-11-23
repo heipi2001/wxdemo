@@ -1,0 +1,54 @@
+<!--pages/my/setting/setting.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">设置资料</view></cu-custom>
+<view class="margin-xl padding-xl bg-white radius shadow shadow-lg">
+  <view class="flex justify-center">
+    <block>
+      <view class='text-center'>
+        <view>
+          <open-data type="userAvatarUrl" class="headImage round cu-avatar xl"></open-data>
+        </view>
+        <view class="padding">{{pageUserInfoData.userKickname}}</view>
+      </view>
+    </block>
+  </view>
+  <form>
+    <view>
+      <view class="cu-form-group">
+        <view class="title">用户ID</view>
+        <input placeholder="{{userInfo.userId}}" disabled="true" value="{{pageUserInfoData.userId}}"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">用户邮箱</view>
+        <input disabled="true" value="{{pageUserInfoData.userEmail}}"></input>
+      </view>
+      <view class="cu-bar bg-white">
+        <view class="action">
+          更换背景图片
+        </view>
+      </view>
+    <view class="cu-form-group">
+      <view class="grid col-4 grid-square flex-sub">
+        <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+          <image src='{{imgList[index]}}' mode='aspectFill'></image>
+          <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+            <text class="cuIcon-close"></text>
+          </view>
+        </view>
+        <view class="solids" bindtap="ChooseImage" wx:if="{{!imgList.length}}">
+          <text class="cuIcon-cameraadd"></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="cu-form-group align-start">
+      <view class="title">个人简介</view>
+      <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" value="{{pageUserInfoData.userMessage}}">
+        
+      </textarea>
+	  </view>
+  </view>
+  <view class="padding flex flex-direction bg-white">
+    <button class="cu-btn bg-grey lg" bindtap="changeUserInfo">确定修改</button>
+  </view>
+</form> 
+</view>
